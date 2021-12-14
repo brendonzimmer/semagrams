@@ -1,0 +1,113 @@
+[
+  { "word": "heptapod", "pos": "noun object", "synonyms": [""] },
+  { "word": "first-person-singular", "pos": "noun object", "synonyms": ["i", "me"] },
+  { "word": "first-person-plural", "pos": "noun object", "synonyms": ["we", "us", "our", "ourselves"] },
+  {
+    "word": "second-person",
+    "pos": "noun object",
+    "synonyms": ["you", "your", "yourselves"]
+  },
+  {
+    "word": "third-person",
+    "pos": "noun object",
+    "synonyms": [
+      "he",
+      "him",
+      "his",
+      "himself",
+      "she",
+      "her",
+      "hers",
+      "herself",
+      "they",
+      "them",
+      "theirs",
+      "theirself",
+      "it",
+      "its",
+      "itself"
+    ]
+  },
+  { "word": "eats", "pos": "verb", "synonyms": ["eat", "ate", "eaten", "eating"] },
+  {
+    "word": "food",
+    "pos": "noun object",
+    "synonyms": ["egg", "gourd", "nut", "fruit", "apple", "meat", "sugar", "syrup"]
+  },
+  {
+    "word": "hears",
+    "pos": "verb",
+    "synonyms": ["hear", "heard", "hearing", "listen", "listens", "listening"]
+  },
+  { "word": "reads", "pos": "verb", "synonyms": ["read", "reading"] },
+  {
+    "word": "goes",
+    "pos": "verb",
+    "synonyms": ["go", "going", "gone", "come", "comes", "coming", "return", "returns", "returning"]
+  },
+  {
+    "word": "sees",
+    "pos": "verb",
+    "synonyms": ["see", "seen", "saw", "seeing", "observe", "observes", "observing", "notice", "notices", "noticing"]
+  },
+  { "word": "air", "pos": "noun object", "synonyms": ["cloud", "fog", "oxygen", "atmosphere"] },
+  { "word": "light", "pos": "noun object", "synonyms": [] },
+  { "word": "water", "pos": "noun object", "synonyms": [] },
+  { "word": "ocean", "pos": "noun object", "synonyms": ["sea", "beach"] },
+  { "word": "process", "pos": "noun object", "synonyms": ["action"] },
+  { "word": "hungry", "pos": "object", "synonyms": ["hunger"] },
+  { "word": "human", "pos": "noun object", "synonyms": ["person", "people", "creature"] },
+  {
+    "word": "is",
+    "pos": "verb",
+    "synonyms": ["am", "are", "was", "were", "be", "get", "gets", "getting", "become", "becomes", "becoming"]
+  },
+  {
+    "word": "walks",
+    "pos": "verb",
+    "synonyms": ["walk", "walking", "pace", "paces", "pacing", "run", "runs", "running", "jog", "jogs", "jogging"]
+  },
+  {
+    "word": "learns",
+    "pos": "verb",
+    "synonyms": [
+      "learn",
+      "learning",
+      "understand",
+      "understanding",
+      "understands",
+      "realize",
+      "realizes",
+      "realizing",
+      "gain",
+      "gains",
+      "gaining"
+    ]
+  },
+  {
+    "word": "rocky-orbiter",
+    "pos": "noun object",
+    "synonyms": ["earth", "planet", "orbiter", "moon", "star", "satellite"]
+  },
+  { "word": "life", "pos": "noun object", "synonyms": ["nature"] },
+  {
+    "word": "has",
+    "pos": "verb",
+    "synonyms": [
+      "have",
+      "had",
+      "having",
+      "force",
+      "forces",
+      "forcing",
+      "enforcing",
+      "need",
+      "needs",
+      "needing",
+      "obtain",
+      "obtains",
+      "obtaining"
+    ]
+  },
+  { "word": "time", "pos": "noun object", "synonyms": ["past", "present", "future", "infinity", "infinite"] }
+]
