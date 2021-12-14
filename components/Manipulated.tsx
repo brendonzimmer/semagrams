@@ -3,8 +3,8 @@ import { NextPage } from "next";
 import { Rnd } from "react-rnd";
 
 const Manipulated: NextPage<{ word: string; hideBox: boolean }> = ({ word, hideBox }) => {
-  if (!word) return;
   const [deg, setDeg] = useState(0);
+  if (!word) return <div>Loading</div>;
 
   return (
     <>
@@ -35,6 +35,7 @@ const Manipulated: NextPage<{ word: string; hideBox: boolean }> = ({ word, hideB
           src={`/words/${word}.svg`}
           draggable={false}
           id="img"
+          alt={'Semagram of "' + word + '"'}
         />
       </Rnd>
     </>

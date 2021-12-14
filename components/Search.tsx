@@ -9,7 +9,7 @@ const Search: NextPage<{ setSearch: Dispatch<SetStateAction<string>> }> = ({ set
   useEffect(() => {
     if (allowSubmit && !simplify(sentence)) setAllowSubmit(false);
     if (!allowSubmit && simplify(sentence)) setAllowSubmit(true);
-  }, [sentence]);
+  }, [sentence, allowSubmit]);
 
   return (
     <div className="mx-4 font-mono text-black/90 ring-4 rounded ring-gray-400">
@@ -25,7 +25,7 @@ const Search: NextPage<{ setSearch: Dispatch<SetStateAction<string>> }> = ({ set
         className="w-3/4 md:w-[calc(6.5%*100/12)] focus:placeholder-black/20 lg:peer-focus:w-[calc(3.5%*100/12)] bg-gray-200 lg:duration-100 focus:ring-transparent border-0 border-r-2 border-gray-400 focus:border-gray-400 rounded-bl md:rounded-none"
         onChange={e => setSentence(e.target.value)}
       />
-      <Link href={{ pathname: "/make", query: { sentence } }}>
+      <Link passHref href={{ pathname: "/make", query: { sentence } }}>
         <button
           disabled={!allowSubmit}
           className={`relative w-1/4 md:w-[calc(1.5%*100/12)] py-2 bg-gray-200 text-gray-500 rounded-br md:rounded-r ${

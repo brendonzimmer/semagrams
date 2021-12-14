@@ -1,7 +1,8 @@
-import { getImageAddresses, simplify } from "../../utils/sentence";
+import { getImageAddresses, simplify } from "../utils/sentence";
 import type { GetServerSideProps, NextPage } from "next";
-import Manipulated from "../../components/Manipulated";
+import Manipulated from "../components/Manipulated";
 import { useState } from "react";
+import { ParsedUrlQuery } from "querystring";
 
 const Sentence: NextPage<{ simplified: string; addresses: string[] }> = ({ simplified, addresses }) => {
   const [hide, setHide] = useState(false);
@@ -57,6 +58,7 @@ const Sentence: NextPage<{ simplified: string; addresses: string[] }> = ({ simpl
       <svg width={wid} height="500" xmlns="http://www.w3.org/2000/svg">
         {addresses.map((word, i) => (
           <image
+            key={word}
             href={`../words/${word}.svg`}
             transform={"scale(1.12) rotate(" + rotate[i] + ") " + transform[i].replaceAll("px", "").replaceAll(",", "")}
             style={{
@@ -111,17 +113,15 @@ const Sentence: NextPage<{ simplified: string; addresses: string[] }> = ({ simpl
 export default Sentence;
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const sentence = query.sentence as string;
-  if (sentence) {
-    const simplified = simplify(sentence);
-    if (!simplified) return { redirect: { destination: "/" } };
+  const simplified = simplify(query.sentence as string);
 
+  if (simplified) {
     const addresses = getImageAddresses(simplified);
-
     return { props: { simplified, addresses } };
   }
 
   return {
+    props: {},
     redirect: {
       destination: "/",
     },

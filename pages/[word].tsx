@@ -6,7 +6,7 @@ const Word: NextPage<{ wordData: { word: string; pos: string; synonyms: string[]
   return (
     <div className="flex flex-col h-[100vh] items-center justify-center">
       <div className="relative m-2 flex justify-center items-center">
-        <Link href={"/"}>
+        <Link passHref href={"/"}>
           <div className="z-10 cursor-pointer hidden lg:block lg:absolute lg:-left-16 text-5xl  bg-gray-200 rounded px-1 ring-4 ring-gray-400 text-black/90">
             ←
           </div>
@@ -15,7 +15,7 @@ const Word: NextPage<{ wordData: { word: string; pos: string; synonyms: string[]
           {wordData.word.toUpperCase()}
         </div>
       </div>
-      <Link href={"/"}>
+      <Link passHref href={"/"}>
         <div className="z-10 cursor-pointer lg:hidden text-5xl mb-3 bg-gray-200 rounded px-1 ring-4 ring-gray-400 text-black/90">
           ←
         </div>
