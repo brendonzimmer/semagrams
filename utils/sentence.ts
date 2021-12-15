@@ -6,8 +6,11 @@ export function simplify(sentence: string) {
 
   const words = sentence
     .toLowerCase()
+    .replaceAll(/[^a-z\s]/g, "")
+    .replaceAll(/\s\s+/g, " ")
     .split(" ")
     .filter(word => {
+      if (word === "") return false;
       for (const wordData of data) if (wordData.word === word || wordData.synonyms.includes(word)) return true;
     });
 
