@@ -95,7 +95,7 @@ const Sentence: NextPage<{ simplified: string; addresses: string[] }> = ({ simpl
             <div className="flex w-full justify-center items-center relative">
               <button
                 className="select-none z-10 px-2 py-1 text-lg font-mono bg-gray-400 absolute top-0 right-0 rounded-bl"
-                onClick={() => alert("This isn't working right now :/\nTry again when later.")}
+                onClick={() => alert("This isn't working right now :/\nTry again later.")}
               >
                 Upload
               </button>

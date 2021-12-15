@@ -6,8 +6,8 @@ export function simplify(sentence: string) {
 
   const words = sentence
     .toLowerCase()
-    .replaceAll(/[^a-z\s]/g, "")
-    .replaceAll(/\s\s+/g, " ")
+    .replace(/[^a-z\s]/g, "")
+    .replace(/\s\s+/g, " ")
     .split(" ")
     .filter(word => {
       if (word === "") return false;
@@ -19,56 +19,56 @@ export function simplify(sentence: string) {
   return words.join(" ");
 }
 
-function findNoun(sentence: string) {
-  const words = sentence.split(" ");
+// function findNoun(sentence: string) {
+//   const words = sentence.split(" ");
 
-  for (const word of words)
-    for (const wordData of data)
-      if (wordData.pos.includes("noun") && (wordData.word === word || wordData.synonyms.includes(word))) return word;
+//   for (const word of words)
+//     for (const wordData of data)
+//       if (wordData.pos.includes("noun") && (wordData.word === word || wordData.synonyms.includes(word))) return word;
 
-  return "";
-}
+//   return "";
+// }
 
-function findVerb(sentence: string) {
-  const words = sentence.split(" ");
-  for (const word of words)
-    for (const wordData of data)
-      if (wordData.pos.includes("verb") && (wordData.word === word || wordData.synonyms.includes(word))) return word;
+// function findVerb(sentence: string) {
+//   const words = sentence.split(" ");
+//   for (const word of words)
+//     for (const wordData of data)
+//       if (wordData.pos.includes("verb") && (wordData.word === word || wordData.synonyms.includes(word))) return word;
 
-  return "";
-}
+//   return "";
+// }
 
-function findObject(sentence: string, exclude?: string[]) {
-  const words = sentence.split(" ");
-  for (const word of words) {
-    if (exclude?.includes(word)) continue;
+// function findObject(sentence: string, exclude?: string[]) {
+//   const words = sentence.split(" ");
+//   for (const word of words) {
+//     if (exclude?.includes(word)) continue;
 
-    for (const wordData of data)
-      if (wordData.pos.includes("object") && (wordData.word === word || wordData.synonyms.includes(word))) return word;
-  }
+//     for (const wordData of data)
+//       if (wordData.pos.includes("object") && (wordData.word === word || wordData.synonyms.includes(word))) return word;
+//   }
 
-  return "";
-}
+//   return "";
+// }
 
-export function returnPos(sentence: string) {
-  let noun = findNoun(sentence);
-  let verb = findVerb(sentence);
-  let object = findObject(sentence, [noun, verb]);
+// export function returnPos(sentence: string) {
+//   let noun = findNoun(sentence);
+//   let verb = findVerb(sentence);
+//   let object = findObject(sentence, [noun, verb]);
 
-  for (const wordData of data) if (wordData.word === noun || wordData.synonyms.includes(noun)) noun = wordData.word;
+//   for (const wordData of data) if (wordData.word === noun || wordData.synonyms.includes(noun)) noun = wordData.word;
 
-  for (const wordData of data) if (wordData.word === verb || wordData.synonyms.includes(verb)) verb = wordData.word;
+//   for (const wordData of data) if (wordData.word === verb || wordData.synonyms.includes(verb)) verb = wordData.word;
 
-  if (object)
-    for (const wordData of data)
-      if (wordData.word === object || wordData.synonyms.includes(object)) object = wordData.word;
+//   if (object)
+//     for (const wordData of data)
+//       if (wordData.word === object || wordData.synonyms.includes(object)) object = wordData.word;
 
-  return {
-    noun,
-    verb,
-    object,
-  };
-}
+//   return {
+//     noun,
+//     verb,
+//     object,
+//   };
+// }
 
 export function getImageAddresses(sentence: string) {
   const simplified = simplify(sentence).split(" ");
